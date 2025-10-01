@@ -1,0 +1,145 @@
+/*
+Q1) Find the area of a circle.
+*/
+
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float r, area;
+    printf("Enter radius: ");
+    scanf("%f", &r);
+    area = PI * r * r;
+    printf("Area = %.2f\n", area);
+    return 0;
+}
+/*
+Q2) WAP to enter two numbers and their sum, difference, multiplication, division and modulus and
+display the output in the following format
+Enter two numbers
+50 10
+50 + 10 = 60
+50 – 10 = 40
+50 * 10 = 500
+50 / 10 = 5
+50 % 10 = 0
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("%d + %d = %d\n", a, b, a + b);
+    printf("%d - %d = %d\n", a, b, a - b);
+    printf("%d * %d = %d\n", a, b, a * b);
+    if (b != 0) {
+        printf("%d / %d = %d\n", a, b, a / b);
+        printf("%d %% %d = %d\n", a, b, a % b);
+    } else {
+        printf("Division or modulus by zero not allowed\n");
+    }
+
+    return 0;
+}
+/*
+Q3) Enter the length and breadth of a rectangle and find the area.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float l, b, area;
+    printf("Enter length and breadth: ");
+    scanf("%f %f", &l, &b);
+    area = l * b;
+    printf("Area = %.2f\n", area);
+    return 0;
+}
+/*
+Q4) Find the average of 3 entered numbers.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float a, b, c, avg;
+    printf("Enter three numbers: ");
+    scanf("%f %f %f", &a, &b, &c);
+    avg = (a + b + c) / 3;
+    printf("Average = %.2f\n", avg);
+    return 0;
+}
+/*
+Q5) Enter the CGPA obtained by a student and find the equivalent percentage of marks. 
+(Hint : (CGPA - 0.5) × 10)
+*/
+
+#include <stdio.h>
+
+int main() {
+    float cgpa, percent;
+    printf("Enter CGPA: ");
+    scanf("%f", &cgpa);
+    percent = (cgpa - 0.5) * 10;
+    printf("Percentage = %.2f%%\n", percent);
+    return 0;
+}
+/*
+Q6) Swap the values of two variables using a third variable.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping: a=%d, b=%d\n", a, b);
+    return 0;
+}
+/*
+Q7) Swap the values of two variables without using a third variable.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("After swapping: a=%d, b=%d\n", a, b);
+    return 0;
+}
+/*
+Q8) Find the sum of the individual digits of any entered three-digit positive number.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("Enter a three-digit number: ");
+    scanf("%d", &num);
+
+    sum += num % 10;
+    num /= 10;
+    sum += num % 10;
+    num /= 10;
+    sum += num;
+
+    printf("Sum of digits = %d\n", sum);
+    return 0;
+}
