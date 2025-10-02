@@ -1,0 +1,640 @@
+/*
+Q1) Find the area of a circle.
+*/
+
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float r, area;
+    printf("Enter radius: ");
+    scanf("%f", &r);
+    area = PI * r * r;
+    printf("Area = %.2f\n", area);
+    return 0;
+}
+/*
+Q2) WAP to enter two numbers and their sum, difference, multiplication, division and modulus and
+display the output in the following format
+Enter two numbers
+50 10
+50 + 10 = 60
+50 – 10 = 40
+50 * 10 = 500
+50 / 10 = 5
+50 % 10 = 0
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("%d + %d = %d\n", a, b, a + b);
+    printf("%d - %d = %d\n", a, b, a - b);
+    printf("%d * %d = %d\n", a, b, a * b);
+    if (b != 0) {
+        printf("%d / %d = %d\n", a, b, a / b);
+        printf("%d %% %d = %d\n", a, b, a % b);
+    } else {
+        printf("Division or modulus by zero not allowed\n");
+    }
+
+    return 0;
+}
+/*
+Q3) Enter the length and breadth of a rectangle and find the area.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float l, b, area;
+    printf("Enter length and breadth: ");
+    scanf("%f %f", &l, &b);
+    area = l * b;
+    printf("Area = %.2f\n", area);
+    return 0;
+}
+/*
+Q4) Find the average of 3 entered numbers.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float a, b, c, avg;
+    printf("Enter three numbers: ");
+    scanf("%f %f %f", &a, &b, &c);
+    avg = (a + b + c) / 3;
+    printf("Average = %.2f\n", avg);
+    return 0;
+}
+/*
+Q5) Enter the CGPA obtained by a student and find the equivalent percentage of marks. 
+(Hint : (CGPA - 0.5) × 10)
+*/
+
+#include <stdio.h>
+
+int main() {
+    float cgpa, percent;
+    printf("Enter CGPA: ");
+    scanf("%f", &cgpa);
+    percent = (cgpa - 0.5) * 10;
+    printf("Percentage = %.2f%%\n", percent);
+    return 0;
+}
+/*
+Q6) Swap the values of two variables using a third variable.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping: a=%d, b=%d\n", a, b);
+    return 0;
+}
+/*
+Q7) Swap the values of two variables without using a third variable.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("After swapping: a=%d, b=%d\n", a, b);
+    return 0;
+}
+/*
+Q8) Find the sum of the individual digits of any entered three-digit positive number.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("Enter a three-digit number: ");
+    scanf("%d", &num);
+
+    sum += num % 10;
+    num /= 10;
+    sum += num % 10;
+    num /= 10;
+    sum += num;
+
+    printf("Sum of digits = %d\n", sum);
+    return 0;
+}
+/*
+Q9) Enter the principal, time, and rate of interest. Calculate the simple interest.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float p, t, r, si;
+    printf("Enter principal, time, rate: ");
+    scanf("%f %f %f", &p, &t, &r);
+
+    si = (p * t * r) / 100;
+    printf("Simple Interest = %.2f\n", si);
+    return 0;
+}
+/*
+Q10) Convert any input temperature in Fahrenheit to Celsius. Hint : C = (F-32)*5/9
+*/
+
+#include <stdio.h>
+
+int main() {
+    float f, c;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &f);
+
+    c = (f - 32) * 5 / 9;
+    printf("Celsius = %.2f\n", c);
+    return 0;
+}
+/*
+Q11) Convert Celsius to Fahrenheit. (HINT: F = C*9/5 + 32)
+*/
+
+#include <stdio.h>
+
+int main() {
+    float c, f;
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &c);
+
+    f = c * 9 / 5 + 32;
+    printf("Fahrenheit = %.2f\n", f);
+    return 0;
+}
+/*
+Q12) WAP to enter side of a square and display radius of a circle whose area is same as that of square.
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float side, area, radius;
+    printf("Enter side of square: ");
+    scanf("%f", &side);
+
+    area = side * side;
+    radius = sqrt(area / 3.14159);
+    printf("Radius of circle = %.2f\n", radius);
+    return 0;
+}
+/*
+Q13) Find the percentage of marks obtained by a student by entering the marks secured 
+by the student in 5 subjects. Consider the total mark in each subject is 100.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int m1, m2, m3, m4, m5;
+    float percentage;
+    printf("Enter marks in 5 subjects (out of 100): ");
+    scanf("%d %d %d %d %d", &m1, &m2, &m3, &m4, &m5);
+
+    percentage = (m1 + m2 + m3 + m4 + m5) / 5.0;
+    printf("Percentage = %.2f%%\n", percentage);
+    return 0;
+}
+/*
+Q14) Calculate the gross salary of an employee by entering the basic salary. 
+DA is 42%, HRA is 30% of the basic salary and a fixed other allowance (OA) of Rs. 2000. 
+(Gross salary = Basic + DA + HRA + OA)
+*/
+
+#include <stdio.h>
+
+int main() {
+    float basic, da, hra, gross;
+    int oa = 2000;
+    printf("Enter basic salary: ");
+    scanf("%f", &basic);
+
+    da = 0.42 * basic;
+    hra = 0.30 * basic;
+    gross = basic + da + hra + oa;
+
+    printf("Gross Salary = %.2f\n", gross);
+    return 0;
+}
+/*
+Q15) Convert an input total number of days into corresponding number of years, months and remaining
+days. Consider 1 month=30 days.
+(Example- Input days: 450 days; Output: 1 year, 2 months, 25 days)
+*/
+
+#include <stdio.h>
+
+int main() {
+    int days, years, months, rem;
+    printf("Enter total days: ");
+    scanf("%d", &days);
+
+    years = days / 365;
+    days %= 365;
+    months = days / 30;
+    rem = days % 30;
+
+    printf("%d year(s), %d month(s), %d day(s)\n", years, months, rem);
+    return 0;
+}
+/*
+Q16) Input some quantity weight in grams and calculate the corresponding weight in Kilograms and
+remaining grams. (Example- Input weight: 1500 grams; Output: 1 KG 500 grams)
+*/
+
+#include <stdio.h>
+
+int main() {
+    int grams, kg, rem;
+    printf("Enter weight in grams: ");
+    scanf("%d", &grams);
+
+    kg = grams / 1000;
+    rem = grams % 1000;
+
+    printf("%d KG %d grams\n", kg, rem);
+    return 0;
+}
+/*
+Q18) Calculate the distance between two points (x1, y1) and (x2, y2) for any entered values.
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x1, y1, x2, y2, d;
+    printf("Enter coordinates (x1 y1): ");
+    scanf("%f %f", &x1, &y1);
+    printf("Enter coordinates (x2 y2): ");
+    scanf("%f %f", &x2, &y2);
+
+    d = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    printf("Distance = %.2f\n", d);
+    return 0;
+}
+/*
+Q19) Calculate area of a triangle by Herron’s method for any entered values of a, b and c. 
+Hint: A = √s(s − a)(s − b)(s − c)
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c, s, area;
+    printf("Enter three sides of triangle: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    s = (a + b + c) / 2;
+    area = sqrt(s * (s - a) * (s - b) * (s - c));
+
+    printf("Area = %.2f\n", area);
+    return 0;
+}
+/*
+Q20) Print the size of various basic data types (char, int, float, double) in C.
+*/
+
+#include <stdio.h>
+
+int main() {
+    printf("Size of char = %zu byte(s)\n", sizeof(char));
+    printf("Size of int = %zu byte(s)\n", sizeof(int));
+    printf("Size of float = %zu byte(s)\n", sizeof(float));
+    printf("Size of double = %zu byte(s)\n", sizeof(double));
+    return 0;
+}
+/*
+Q21) Calculate the total bill to be paid by a customer entering the price of 3 products and their
+quantities.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float p1, p2, p3, total;
+    int q1, q2, q3;
+
+    printf("Enter price and quantity of product 1: ");
+    scanf("%f %d", &p1, &q1);
+    printf("Enter price and quantity of product 2: ");
+    scanf("%f %d", &p2, &q2);
+    printf("Enter price and quantity of product 3: ");
+    scanf("%f %d", &p3, &q3);
+
+    total = p1*q1 + p2*q2 + p3*q3;
+    printf("Total Bill = %.2f\n", total);
+    return 0;
+}
+/*
+Q22) Find ascii code of an entered character.
+*/
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    printf("ASCII code of %c = %d\n", ch, ch);
+    return 0;
+}
+/*
+Q23) Convert a lower case letter to upper case letter.
+*/
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a lowercase letter: ");
+    scanf(" %c", &ch);
+
+    if (ch >= 'a' && ch <= 'z')
+        ch = ch - 32;
+
+    printf("Uppercase = %c\n", ch);
+    return 0;
+}
+/*
+Q24) Cconvert a lower case letter to upper case letter.
+(Note: This is same as Q23, repeating for assignment.)
+*/
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a lowercase letter: ");
+    scanf(" %c", &ch);
+
+    if (ch >= 'a' && ch <= 'z')
+        ch = ch - 32;
+
+    printf("Uppercase = %c\n", ch);
+    return 0;
+}
+/*
+Q25) Find the smallest number among three entered numbers using conditional operator.
+*/
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c, min;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    min = (a < b) ? ((a < c) ? a : c) : ((b < c) ? b : c);
+
+    printf("Smallest = %d\n", min);
+    return 0;
+}
+/*
+Q26) Enter the total price of some food order by a customer in a restaurant. The restaurant charges a
+12% GST on total amount. If the total amount exceeds RS 1000, the restaurant offers a 5%
+discount. Otherwise no discount is provided. Use conditional operator for discount calculation.
+Print the final amount payable by the customer.
+*/
+
+#include <stdio.h>
+
+int main() {
+    float price, final;
+    printf("Enter total price: ");
+    scanf("%f", &price);
+
+    final = price + (price * 0.12);
+    final = (final > 1000) ? (final - (final * 0.05)) : final;
+
+    printf("Final Amount = %.2f\n", final);
+    return 0;
+}
+/*
+Q27) Find the volume of a cylinder.
+*/
+
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float r, h, volume;
+    printf("Enter radius and height: ");
+    scanf("%f %f", &r, &h);
+
+    volume = PI * r * r * h;
+    printf("Volume of cylinder = %.2f\n", volume);
+    return 0;
+}
+/*
+Q28) WAP to find the volume of a sphere.
+*/
+
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float r, volume;
+    printf("Enter radius: ");
+    scanf("%f", &r);
+
+    volume = (4.0/3.0) * PI * r * r * r;
+    printf("Volume of sphere = %.2f\n", volume);
+    return 0;
+}
+/*
+Q29) WAP to compute roots of a quadratic equation ax^2 + bx + c.
+Hint: (-b ± √(b^2-4ac)) / 2a
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c, d, r1, r2;
+    printf("Enter a, b, c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    d = b*b - 4*a*c;
+
+    if (d < 0) {
+        printf("No real roots\n");
+    } else if (d == 0) {
+        r1 = -b / (2*a);
+        printf("One real root: %.2f\n", r1);
+    } else {
+        r1 = (-b + sqrt(d)) / (2*a);
+        r2 = (-b - sqrt(d)) / (2*a);
+        printf("Roots: %.2f and %.2f\n", r1, r2);
+    }
+    return 0;
+}
+/*
+Q30) WAP to enter a three digit number and compute its reverse.
+Hint: Enter a number 728 → Reverse = 827
+*/
+
+#include <stdio.h>
+
+int main() {
+    int num, rev = 0, digit;
+    printf("Enter a three-digit number: ");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        digit = num % 10;
+        rev = rev * 10 + digit;
+        num /= 10;
+    }
+
+    printf("Reverse = %d\n", rev);
+    return 0;
+}
+/*
+Q31) WAP to enter a four digit number and compute sum of the digit.
+Enter a four digit number 7280 → Sum of digits = 17
+*/
+
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+    printf("Enter a four-digit number: ");
+    scanf("%d", &num);
+
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+
+    printf("Sum of digits = %d\n", sum);
+    return 0;
+}
+/*
+Q32) Convert degree to radian.
+Hint: 180° = π radians
+*/
+
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float deg, rad;
+    printf("Enter angle in degrees: ");
+    scanf("%f", &deg);
+
+    rad = deg * (PI / 180);
+    printf("Radian = %.4f\n", rad);
+    return 0;
+}
+/*
+Q33) Convert radian to degree.
+Hint: π radians = 180°
+*/
+
+#include <stdio.h>
+#define PI 3.14159
+
+int main() {
+    float rad, deg;
+    printf("Enter angle in radians: ");
+    scanf("%f", &rad);
+
+    deg = rad * (180 / PI);
+    printf("Degree = %.2f\n", deg);
+    return 0;
+}
+/*
+Q34) Enter polar coordinates (r , θ) of a point and convert them into Cartesian coordinates (x,y).
+Hint: x = r cos(θ), y = r sin(θ)
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float r, theta, x, y;
+    printf("Enter r and θ (in radians): ");
+    scanf("%f %f", &r, &theta);
+
+    x = r * cos(theta);
+    y = r * sin(theta);
+
+    printf("Cartesian Coordinates: (%.2f, %.2f)\n", x, y);
+    return 0;
+}
+/*
+Q35) WAP to enter Cartesian coordinates (x,y) of a point and convert them into polar coordinates (r , θ).
+Hint: r = √(x^2 + y^2), θ = tan−1(y/x)
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x, y, r, theta;
+    printf("Enter Cartesian coordinates (x y): ");
+    scanf("%f %f", &x, &y);
+
+    r = sqrt(x*x + y*y);
+    theta = atan2(y, x); // atan2 handles all quadrants
+
+    printf("Polar Coordinates: r = %.2f, θ = %.2f radians\n", r, theta);
+    return 0;
+}
+/*
+Q36) WAP to enter co-ordinates of two points of a square, then calculate area and perimeter of the square.
+Hint:
+Enter x1=0, y1=0
+Enter x2=3, y2=4
+Side = 5 → AREA = 25, PERIMETER = 20
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x1, y1, x2, y2, side, area, peri;
+    printf("Enter x1 y1: ");
+    scanf("%f %f", &x1, &y1);
+    printf("Enter x2 y2: ");
+    scanf("%f %f", &x2, &y2);
+
+    side = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    area = side * side;
+    peri = 4 * side;
+
+    printf("Side = %.2f\n", side);
+    printf("Area = %.2f\n", area);
+    printf("Perimeter = %.2f\n", peri);
+    return 0;
+}
